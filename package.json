@@ -4,12 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=beta tsc-watch --onsuccess \"node ./dist/bin/www.js\" ",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts",
+    "prettier": "prettier --write --config ./.prettierrc './src/**/*.ts'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^6.0.12"
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsend": "^1.1.0",
+    "module-alias": "^2.2.2",
+    "mongoose": "^6.0.12",
+    "tsc-watch": "^4.5.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jsend": "^1.0.29"
+  },
+  "_moduleAliases": {
+    "~": "dist"
   }
 }
